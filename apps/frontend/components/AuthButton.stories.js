@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button } from './AuthButton';
+import { AuthButton } from './AuthButton';
 
 export default {
-  title: 'Example/Button',
-  component: Button,
+  title: 'Example/AuthButton',
+  component: AuthButton,
 };
 
-const Template = (args) => <Button {...args} />;
+const Template = (args) => <AuthButton {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

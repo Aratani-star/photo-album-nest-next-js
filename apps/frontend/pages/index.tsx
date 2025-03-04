@@ -1,18 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
-import { useAuth } from '../context/AuthContext'
-import { getImages, Image } from '../lib/api'
-import ImageUpload from '../components/ImageUpload'
-import ImageItem from '../components/ImageItem'
-import ImageModal from '../components/ImageModal'
 
 export default function Gallery() {
-  // const { user } = useAuth()
   const [user] = useState(null);
 
   const router = useRouter()
-  const [images, setImages] = useState<Image[]>([])
-  const [selectedImage, setSelectedImage] = useState<Image | null>(null)
 
   const fetchImages = () => {
     
