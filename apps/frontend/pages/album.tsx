@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useAuth } from '../context/AuthContext'
 import { getImages, Image } from '../lib/api'
-import ImageUpload from '../components/ImageUpload'
-import ImageItem from '../components/ImageItem'
-import ImageModal from '../components/ImageModal'
+import ImageUpload from '../components/Molecules/ImageUpload'
+import ImageItem from '../components/Molecules/ImageItem'
+import ImageModal from '../components/Molecules/ImageModal'
 
 export default function Gallery() {
   const { user } = useAuth()
@@ -13,7 +13,6 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<Image | null>(null)
 
   const fetchImages = () => {
-      console.log("******************************************")
     if (!user) {
       router.push('/signin')
     } else {

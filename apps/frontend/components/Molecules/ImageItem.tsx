@@ -1,4 +1,4 @@
-import { deleteImage, Image } from '../lib/api'
+import { deleteImage, Image } from '../../lib/api'
 
 export default function ImageItem({ img, onDelete }: { img: Image; onDelete: () => void }) {
   const handleDelete = async () => {

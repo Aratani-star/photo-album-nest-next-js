@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { uploadImage } from '../lib/api'
+import { uploadImage } from '../../lib/api'
 
 export default function ImageUpload({ onUpload }: { onUpload: () => void }) {
   const [file, setFile] = useState<File | null>(null)

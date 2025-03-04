@@ -1,4 +1,4 @@
-import { Image } from '../lib/api'
+import { Image } from '../../lib/api'
 
 interface ImageModalProps {
   image: Image | null
