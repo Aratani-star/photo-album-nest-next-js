@@ -1,0 +1,2 @@
+[*]
+end_of_line = lf  # or 'crlf' if you need Windows-style
