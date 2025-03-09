@@ -1,4 +1,4 @@
-import AuthButton from "@/components/Atoms/AuthButton";
+import AuthButton from "@/components/Buttons/AuthButton";
 export default function SignIn() {
   return (
     <div className="flex flex-col items-center justify-center h-screen">

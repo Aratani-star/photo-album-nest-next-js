@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/firebase.js", "components/Atoms/AuthButton.stories.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "lib/firebase.js", "components/Buttons/AuthButton.stories.js"],
   "exclude": ["node_modules"]
 }

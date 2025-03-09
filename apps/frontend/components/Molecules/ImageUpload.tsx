@@ -1,12 +1,23 @@
 import { useState } from 'react'
+import { notification } from 'antd';
 import { uploadImage } from '../../lib/api'
 
 export default function ImageUpload({ onUpload }: { onUpload: () => void }) {
   const [file, setFile] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
+  const [api] = notification.useNotification();
+
+  const showNotification = ({title, content}:{title: string, content: string}) => {
+    api.info({
+      message: title,
+      description: content,
+    });
+  };
 
   const handleUpload = async () => {
-    if (!file) return alert('Please select a file')
+    if (!file) {
+      showNotification({ title: "File Uploading", content: "Please select a file." });
+    }
     setLoading(true)
 
     const formData = new FormData()

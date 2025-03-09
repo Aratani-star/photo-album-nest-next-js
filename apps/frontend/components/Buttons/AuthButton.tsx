@@ -6,7 +6,7 @@ import { signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../../lib/firebaseConfig";
 import { useState } from "react";
 
-export default function AuthButton() {
+export default function AuthButton( {label = "", backgroundColor="#000000"} ) {
   const [user, setUser] = useState(null);
 
   const router = useRouter()
@@ -26,7 +26,12 @@ export default function AuthButton() {
         }}
         className="p-2 bg-blue-500 text-white rounded"
       >
-        Sign in with Google
+        {label}
+        <style jsx>{`
+          button {
+            background-color: ${backgroundColor};
+          }
+        `}</style>
       </button>
     </div>
   );
