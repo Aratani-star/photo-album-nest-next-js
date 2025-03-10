@@ -14,7 +14,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const mockUsers = [{ username: 'admin', password: 'password' }]
 
   const signIn = (username: string, password: string) => {
-    const validUser = mockUsers.find((u) => u.username === username && u.password === password)
+    const validUser = mockUsers.find(
+      (u) => u.username === username && u.password === password,
+    )
     if (validUser) {
       setUser(username)
       return true
@@ -24,7 +26,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signOut = () => setUser(null)
 
-  return <AuthContext.Provider value={{ user, signIn, signOut }}>{children}</AuthContext.Provider>
+  return (
+    <AuthContext.Provider value={{ user, signIn, signOut }}>
+      {children}
+    </AuthContext.Provider>
+  )
 }
 
 export function useAuth() {
