@@ -45,7 +45,6 @@ pre-commit:
   commands:
     lint:
       run: "npm run format"
-      
 # pre-push:
 #   commands:
 #     test:
