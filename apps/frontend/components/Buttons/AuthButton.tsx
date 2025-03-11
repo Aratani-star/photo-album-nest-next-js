@@ -19,8 +19,7 @@ export default function AuthButton({
         onClick={async () => {
           try {
             const result = await signInWithPopup(auth, provider)
-            // setUser(result.user);
-            setUser(result.user)
+            setUser(result.user);
             console.log('User Info:', result.user)
             router.push('/album')
           } catch (error) {
@@ -29,7 +28,7 @@ export default function AuthButton({
         }}
         className="p-2 bg-blue-500 text-white rounded"
       >
-        {label}
+        {label ? label : 'Sign In'}
         <style jsx>{`
           button {
             background-color: ${backgroundColor};

@@ -5,7 +5,7 @@ export interface Image {
   description?: string
 }
 
-const API_URL = 'http://localhost:3001/images' // Replace with your API URL
+const API_URL = process.env.API_URL // Replace with your API URL
 
 export const getImages = async (): Promise<Image[]> => {
   const res = await fetch(API_URL)
