@@ -29,7 +29,8 @@ export const Primary: Story = {
   args: {
     primary: true,
     label: 'Click Me',
-    size: 'large',
+    size: 'medium',
+    backgroundColor: '#0b7aee',
   },
 }
 

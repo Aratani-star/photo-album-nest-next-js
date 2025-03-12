@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { useAuth } from '../context/AuthContext'
 import { getImages, Image } from '../lib/api'
-import ImageUpload from '../components/ImageUpload'
-import ImageItem from '../components/ImageItem'
-import ImageModal from '../components/ImageModal'
+import ImageUpload from '../components/Molecules/ImageUpload'
+import ImageItem from '../components/Molecules/ImageItem'
+import ImageModal from '../components/Molecules/ImageModal'
 
 export default function Gallery() {
   const { user } = useAuth()
@@ -13,7 +13,6 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<Image | null>(null)
 
   const fetchImages = () => {
-      console.log("******************************************")
     if (!user) {
       router.push('/signin')
     } else {
@@ -29,14 +28,23 @@ export default function Gallery() {
       <ImageUpload onUpload={fetchImages} />
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-4">
         {images.map((img) => (
-          <div key={img.id} onClick={() => setSelectedImage(img)} className="cursor-pointer">
-          <ImageItem img={img} onDelete={fetchImages} />
-        </div>
+          <div
+            key={img.id}
+            onClick={() => setSelectedImage(img)}
+            className="cursor-pointer"
+          >
+            <ImageItem img={img} onDelete={fetchImages} />
+          </div>
         ))}
       </div>
 
       {/* Show Modal when an image is selected */}
-      {selectedImage && <ImageModal image={selectedImage} onClose={() => setSelectedImage(null)} />}
+      {selectedImage && (
+        <ImageModal
+          image={selectedImage}
+          onClose={() => setSelectedImage(null)}
+        />
+      )}
     </div>
   )
 }

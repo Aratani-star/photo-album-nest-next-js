@@ -6,13 +6,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@next-auth/firebase-adapter": "^2.0.1",
     "@reduxjs/toolkit": "^2.6.0",
+    "antd": "^5.24.3",
     "autoprefixer": "^10.4.20",
     "firebase": "^11.4.0",
     "next": "15.1.7",
@@ -41,6 +43,7 @@
     "eslint-config-prettier": "^10.0.1",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-storybook": "^0.11.3",
+    "lefthook": "^1.11.3",
     "playwright": "^1.50.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.1",
