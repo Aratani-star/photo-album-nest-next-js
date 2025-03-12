@@ -12,8 +12,8 @@ export default function AuthButton({
   backgroundColor = '#000000',
 }) {
   const [, setUser] = useState<User | null>(null)
-
   const router = useRouter()
+  
   return (
     <div>
       <button
@@ -30,11 +30,13 @@ export default function AuthButton({
         className="p-2 bg-blue-500 text-white rounded"
       >
         {label || 'Sign In'}
-        <style jsx>{`
-          button {
-            background-color: ${backgroundColor};
-          }
-        `}</style>
+        <style jsx>
+          {`
+            button {
+              background-color: ${backgroundColor};
+            }
+          `}
+        </style>
       </button>
     </div>
   )
