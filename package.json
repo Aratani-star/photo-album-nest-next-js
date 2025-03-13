@@ -10,7 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "add": "^2.0.6",
     "eslint": "^8.57.1",
-    "prettier": "^3.5.3"
+    "prettier": "^3.5.3",
+    "shadcn": "^2.4.0-canary.12",
+    "toast": "^0.5.4"
   }
 }
