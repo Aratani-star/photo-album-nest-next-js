@@ -6,6 +6,8 @@ interface ImageModalProps {
 }
 
 export default function ImageModal({ image, onClose }: ImageModalProps) {
+  const SERVER_URL = process.env.SERVER_URL || 'http://localhost:3001'
+
   if (!image) return null
 
   return (
@@ -24,7 +26,7 @@ export default function ImageModal({ image, onClose }: ImageModalProps) {
           ✖
         </button>
         <img
-          src={process.env.SERVER_URL + image.url}
+          src={SERVER_URL + image.url}
           alt={image.filename}
           className="w-full h-60 object-cover rounded"
         />

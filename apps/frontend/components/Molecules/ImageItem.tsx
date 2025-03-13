@@ -7,6 +7,8 @@ export default function ImageItem({
   img: Image
   onDelete: () => void
 }) {
+  const SERVER_URL = process.env.SERVER_URL || 'http://localhost:3001'
+
   const handleDelete = async () => {
     if (confirm('Are you sure you want to delete this image?')) {
       await deleteImage(img.id)
@@ -17,7 +19,7 @@ export default function ImageItem({
   return (
     <div className="border p-2 rounded shadow">
       <img
-        src={process.env.SERVER_URL + img.url}
+        src={SERVER_URL + img.url}
         alt={img.filename}
         className="w-full h-40 object-cover rounded"
       />
