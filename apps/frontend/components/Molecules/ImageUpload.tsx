@@ -1,31 +1,18 @@
 import { useState } from 'react'
-import { notification } from 'antd'
 import { uploadImage } from '../../lib/api'
-
+import { useToast } from "@/components/hooks/use-toast"
 export default function ImageUpload({ onUpload }: { onUpload: () => void }) {
   const [file, setFile] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
-  const [api] = notification.useNotification()
-
-  const showNotification = ({
-    title,
-    content,
-  }: {
-    title: string
-    content: string
-  }) => {
-    api.info({
-      message: title,
-      description: content,
-    })
-  }
+  const { toast } = useToast()
 
   const handleUpload = async () => {
     if (!file) {
-      showNotification({
-        title: 'File Uploading',
-        content: 'Please select a file.',
-      })
+      toast({
+        title: "File Uploading",
+        description: "Please select a file.",
+        status: "error"})
+      return
     }
     setLoading(true)
 
