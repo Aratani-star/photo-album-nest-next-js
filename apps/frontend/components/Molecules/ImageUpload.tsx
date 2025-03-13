@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { uploadImage } from '../../lib/api'
-import { useToast } from "@/components/hooks/use-toast"
+import { useToast } from '@/components/hooks/use-toast'
 export default function ImageUpload({ onUpload }: { onUpload: () => void }) {
   const [file, setFile] = useState<File | null>(null)
   const [loading, setLoading] = useState(false)
@@ -9,9 +9,10 @@ export default function ImageUpload({ onUpload }: { onUpload: () => void }) {
   const handleUpload = async () => {
     if (!file) {
       toast({
-        title: "File Uploading",
-        description: "Please select a file.",
-        status: "error"})
+        title: 'File Uploading',
+        description: 'Please select a file.',
+        status: 'error',
+      })
       return
     }
     setLoading(true)
